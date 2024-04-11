@@ -1,0 +1,17 @@
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+.space {
+    flex: 1 1 auto;
+}
