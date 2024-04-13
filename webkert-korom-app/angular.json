@@ -102,6 +102,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "webkert-korom-app:build:production",
+            "firebaseProject": "webkert-korom-5472e",
+            "firebaseHostingSite": "webkert-korom-5472e"
+          }
         }
       }
     }

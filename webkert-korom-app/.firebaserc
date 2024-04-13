@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webkert-korom-5472e": {
+      "hosting": {
+        "webkert-korom-app": [
+          "webkert-korom-5472e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webkert-korom-5472e"
+  }
+}
