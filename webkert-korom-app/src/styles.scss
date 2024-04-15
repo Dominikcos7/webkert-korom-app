@@ -14,3 +14,21 @@ body {
 .mat-form-field-label, .mat-form-field-appearance-legacy{
     color: $pink !important;
 }
+
+.mat-select-value{
+    color: $pink;
+}
+
+.mat-icon-button {
+    color: $pink;
+}
+
+.mat-hint {
+    color: $pink;
+}
+
+ngx-mat-timepicker-standalone {
+    position: absolute;
+    left: 200px;
+    top: -200px;
+}

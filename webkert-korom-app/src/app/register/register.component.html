@@ -1,11 +1,5 @@
 <div class="container">
     <form [formGroup]="registerForm">
-        <div>
-            <mat-form-field>
-                <mat-label>Felhasználónév</mat-label>
-                <input matInput type="text" formControlName="username">
-            </mat-form-field>
-        </div>
         <div formGroupName="fullname">
             <div>
                 <mat-form-field>
@@ -35,13 +29,13 @@
         <div>
             <mat-form-field>
                 <mat-label>Jelszó</mat-label>
-                <input matInput type="text" formControlName="password1">
+                <input matInput type="password" formControlName="password1">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label>Jelszó újra</mat-label>
-                <input matInput type="text" formControlName="password2">
+                <input matInput type="password" formControlName="password2">
             </mat-form-field>
         </div>
         <button mat-stroked-button color="primary" (click)="register()">Regisztráció</button>

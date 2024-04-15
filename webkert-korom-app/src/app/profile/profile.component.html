@@ -1,0 +1,43 @@
+<div class="container">
+    <div><h1>Üdvözöljük {{ username }}!</h1></div>
+
+    <div class="form-container">
+        <form [formGroup]="nailForm">
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Szolgáltatás</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let service of services" [value]="service">
+                            {{ service }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Dátum</mat-label>
+                    <input formControlName="date" matInput [min]="minDate" [matDatepickerFilter]="dateFilter"
+                        [matDatepicker]="datePicker">
+                    <mat-hint>NN/HH/ÉÉÉÉ</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #datePicker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Időpont</mat-label>
+                    <input matInput [format]="24" formControlName="time" [ngxMatTimepicker]="timePicker" readonly />
+                    <mat-icon matSuffix (click)="timePicker.open()">
+                        schedule
+                    </mat-icon>
+                </mat-form-field>
+                <div class="ngx-mtp-box-bordered">
+                    <ngx-mat-timepicker color="primary" appendToInput="true" #timePicker></ngx-mat-timepicker>
+                </div>
+            </div>
+            <div>
+                <button mat-stroked-button color="primary" (click)="submit()">Időpontot foglalok!</button>
+            </div>
+        </form>
+    </div>
+</div>

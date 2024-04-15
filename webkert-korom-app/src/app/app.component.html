@@ -2,8 +2,10 @@
     <span id="toolbar-title"><a [routerLink]="'index'">Crystal Nails</a></span>
     <span class="space"></span>
     <ul>
-        <li><a [routerLink]="'login'">Bejelentkezés</a></li>
-        <li><a [routerLink]="'register'">Regisztráció</a></li>
+        <li><a *ngIf="!(loggedInUser)" [routerLink]="'login'">Bejelentkezés</a></li>
+        <li><a *ngIf="loggedInUser" [routerLink]="'logout'" (click)="logout()">Kilépés</a></li>
+        <li><a *ngIf="!(loggedInUser)" [routerLink]="'register'">Regisztráció</a></li>
+        <li><a *ngIf="loggedInUser" [routerLink]="'profile'">Profil</a></li>
         <li><a [routerLink]="'gallery'">Galéria</a></li>
     </ul>
 </mat-toolbar>
