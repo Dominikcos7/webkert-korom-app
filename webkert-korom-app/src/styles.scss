@@ -4,22 +4,25 @@ $pink: #c2185b;
 html,
 body {
     height: 100%;
-}
-
-body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: lightpink;
 }
 
-.mat-form-field-label, .mat-form-field-appearance-legacy{
+.mat-form-field-label,
+.mat-form-field-appearance-legacy {
     color: $pink !important;
 }
 
-.mat-select-value{
+.mat-select-value {
     color: $pink;
 }
 
 .mat-icon-button {
+    color: $pink;
+}
+
+.mat-icon {
     color: $pink;
 }
 
@@ -29,6 +32,6 @@ body {
 
 ngx-mat-timepicker-standalone {
     position: absolute;
-    left: 200px;
+    left: -200px;
     top: -200px;
 }

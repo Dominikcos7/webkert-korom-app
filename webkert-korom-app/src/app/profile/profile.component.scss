@@ -9,7 +9,8 @@ div {
 
 .container {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 }

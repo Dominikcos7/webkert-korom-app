@@ -1,0 +1,6 @@
+<h1 mat-dialog-title>Biztosan le akarod mondani az alábbi időpontot?</h1>
+<div class="container">
+    {{data.service}} {{data.date | date}} {{data.time}}
+    <button mat-icon-button (click)="yes()"><mat-icon>done</mat-icon></button>
+    <button mat-icon-button (click)="no()"><mat-icon>close</mat-icon></button>
+</div>

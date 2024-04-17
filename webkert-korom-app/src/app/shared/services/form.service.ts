@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +10,9 @@ export class FormService {
 
   getNailForm() {
     return new FormGroup({
-      service: new FormControl(''),
-      date: new FormControl(''),
-      time: new FormControl(''),
+      service: new FormControl('', [Validators.required]),
+      date: new FormControl('', [Validators.required]),
+      time: new FormControl('', [Validators.required]),
     });
   }
 }

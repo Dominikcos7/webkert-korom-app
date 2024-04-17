@@ -12,11 +12,20 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { MatIconModule } from '@angular/material/icon';
+import { ProfileTextComponent } from './profile-text/profile-text.component';
+import { ProfileFormComponent } from './profile-form/profile-form.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeletePopupComponent } from './delete-popup/delete-popup.component';
+import { UpdatePopupComponent } from './update-popup/update-popup.component';
 
 
 @NgModule({
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+    ProfileTextComponent,
+    ProfileFormComponent,
+    DeletePopupComponent,
+    UpdatePopupComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +39,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatDatepickerModule,
     NgxMatTimepickerModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class ProfileModule { }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/services/user.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppointmentService } from '../shared/services/appointment.service';
+import { Appointment } from '../shared/model/Appontment';
+import { Timestamp, doc } from 'firebase/firestore';
 
 @Component({
   selector: 'app-profile',
@@ -12,15 +13,8 @@ export class ProfileComponent implements OnInit {
   username: string = '';
   user?: any;
   uid?: string;
-  nailForm = new FormGroup({
-    service: new FormControl('', [Validators.required]),
-    date: new FormControl('', [Validators.required]),
-    time: new FormControl('', [Validators.required]),
-  });
-  services = ['service1', 'service2', 'service3'];
-  defaultService = this.services[0];
-  minDate: Date = new Date();
   selectedTime?: any;
+  appointments: Appointment[] = [];
 
   constructor(
     private userService: UserService,
@@ -29,7 +23,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeUser();
-    this.initializeForm();
+    this.getAppointments();
   }
 
   initializeUser() {
@@ -40,24 +34,23 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  initializeForm() {
-    this.nailForm.controls['service'].setValue(this.defaultService, { onlySelf: true });
+  getAppointments(){
+    this.appointmentService.getAll(this.uid as string).then(querysnaphot => {
+      querysnaphot.docs.forEach(documentsnaphot => {
+        const appointment: Appointment = {
+          id: documentsnaphot.data()['id'],
+          service: documentsnaphot.data()['service'],
+          date: (documentsnaphot.data()['date'] as unknown as Timestamp).seconds*1000,
+          time: documentsnaphot.data()['time'],
+          userId: this.uid as string
+        }
+        this.appointments.push(appointment);
+      });
+    });
   }
 
-  dateFilter = (d: Date | null): boolean => {
-    const day = (d || new Date()).getDay();
-    return day !== 0 && day !== 6;
-  };
-
-  submit() {
-    if (this.nailForm.valid) {
-      console.log(this.nailForm.value.date as string);
-      this.appointmentService.save(
-        this.nailForm.value.service as string,
-        this.nailForm.value.date as string,
-        this.nailForm.value.time as string,
-        this.uid as string
-      ).then(_ => console.log('appointment added successfully')).catch(error => console.error(error));
-    }
+  refreshAppointments(_: boolean){
+    this.appointments = [];
+    this.getAppointments();
   }
 }
