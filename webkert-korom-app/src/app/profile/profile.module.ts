@@ -17,6 +17,7 @@ import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeletePopupComponent } from './delete-popup/delete-popup.component';
 import { UpdatePopupComponent } from './update-popup/update-popup.component';
+import { MyDatePipe } from '../shared/pipes/my-date.pipe';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { UpdatePopupComponent } from './update-popup/update-popup.component';
     MatDatepickerModule,
     NgxMatTimepickerModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MyDatePipe
   ]
 })
 export class ProfileModule { }

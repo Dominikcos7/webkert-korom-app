@@ -14,7 +14,7 @@ export class UpdatePopupComponent implements OnInit {
     date: new FormControl('', [Validators.required]),
     time: new FormControl('', [Validators.required]),
   });
-  services = ['service1', 'service2', 'service3'];
+  services = ['Lakk', 'Gél-lakk', 'Építés'];
   minDate: Date = new Date();
 
   constructor(

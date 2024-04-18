@@ -2,7 +2,7 @@
     <h1>Üdvözöljük {{ username }}!</h1>
     <h3>Az ön időpontjai: </h3>
     <div *ngFor="let appointment of appointments">
-        {{ appointment.service }}: {{ appointment.date | date }} {{ appointment.time }}
+        {{ appointment.service }}: {{ appointment.date | date | myDate }} {{ appointment.time }}
         <button mat-icon-button (click)="update(appointment)"><mat-icon>edit</mat-icon></button>
         <button mat-icon-button (click)="delete(appointment)"><mat-icon>close</mat-icon></button>
     </div>

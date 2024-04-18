@@ -1,5 +1,8 @@
 <div class="image">
     <button mat-icon-button (click)="previousImage()"><mat-icon>arrow_back_ios</mat-icon></button>
-    <img [src]="currentImage" width="480px" height="600px">
+    <div>
+        <img [src]="currentImage?.url" width="480px" height="600px">
+        <div>{{ currentImage?.description }}</div>
+    </div>
     <button mat-icon-button (click)="nextImage()"><mat-icon>arrow_forward_ios</mat-icon></button>
 </div>
