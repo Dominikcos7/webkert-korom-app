@@ -15,7 +15,7 @@ export class ProfileFormComponent implements OnInit {
     date: new FormControl('', [Validators.required]),
     time: new FormControl('', [Validators.required]),
   });
-  services = ['service1', 'service2', 'service3'];
+  services = ['Lakk', 'Gél-lakk', 'Építés'];
   defaultService = this.services[0];
   minDate: Date = new Date();
 

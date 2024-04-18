@@ -1,1 +1,5 @@
-<p>gallery works!</p>
+<div class="image">
+    <button mat-icon-button (click)="previousImage()"><mat-icon>arrow_back_ios</mat-icon></button>
+    <img [src]="currentImage" width="480px" height="600px">
+    <button mat-icon-button (click)="nextImage()"><mat-icon>arrow_forward_ios</mat-icon></button>
+</div>
