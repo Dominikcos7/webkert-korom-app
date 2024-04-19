@@ -1,0 +1,14 @@
+.mat-card{
+    background-color: white;
+    color: black;
+    max-width: 200px;
+    margin-left: 20px;
+
+    .mat-card-footer{
+        font-size: smaller;
+        color: gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}

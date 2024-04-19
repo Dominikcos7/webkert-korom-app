@@ -1,0 +1,9 @@
+<h2>A te hozzászólásaid: </h2>
+<div class="own-comments">
+    <div *ngFor="let comment of userComments">
+        <app-comment [comment]="comment" (onDelete)="deleteUserComment($event)"></app-comment>
+    </div>
+</div>
+<div>
+    <button mat-raised-button color="primary" (click)="addComment()">Új hozzászólás</button>
+</div>

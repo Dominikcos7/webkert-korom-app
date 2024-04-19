@@ -1,0 +1,13 @@
+<div class="container">
+    <mat-form-field>
+        <mat-label>Írd ide a kommented!</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="5"
+                  [formControl]="body"></textarea>
+      </mat-form-field>
+      <button mat-icon-button (click)="yes()"><mat-icon>done</mat-icon></button>
+      <button mat-icon-button (click)="no()"><mat-icon>close</mat-icon></button>
+</div>

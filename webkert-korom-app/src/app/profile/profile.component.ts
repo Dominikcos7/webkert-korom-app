@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit {
 
   initializeUser() {
     this.uid = JSON.parse(localStorage.getItem('user') as string).uid;
-    this.userService.getByUid(this.uid as string).subscribe(user => {
+    this.userService.getByUid(this.uid as string).subscribe((user: any) => {
       this.user = user;
       this.username = this.user.get('fullname').firstname;
     });

@@ -1,0 +1,6 @@
+<h2>A többiek hozzászólásai: </h2>
+<div class="other-comments">
+    <div *ngFor="let comment of otherComments">
+        <app-comment [comment]="comment"></app-comment>
+    </div>
+</div>
