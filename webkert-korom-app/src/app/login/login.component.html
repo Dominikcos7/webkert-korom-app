@@ -1,4 +1,5 @@
 <div class="container">
+    <h1 *ngIf="error"class="error">Hibás jelszó vagy email!</h1>
     <form [formGroup]="loginForm">
         <div>
             <mat-form-field appearance="fill">

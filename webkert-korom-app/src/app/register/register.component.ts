@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { User } from '../shared/model/User'
 import { UserService } from '../shared/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -20,10 +21,12 @@ export class RegisterComponent implements OnInit {
       lastname: new FormControl('', [Validators.required]),
     })
   });
+  error = false;
 
   constructor(
     private auth: AuthService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +35,7 @@ export class RegisterComponent implements OnInit {
   register() {
     if (this.registerForm.valid) {
       this.auth.register(this.registerForm.value.email as string, this.registerForm.value.password1 as string).then(cred => {
+        this.error = false;
         const uid = cred.user?.uid;
         const user: User = {
           email: this.registerForm.value.email as string,
@@ -42,12 +46,13 @@ export class RegisterComponent implements OnInit {
           }
         }
         this.userService.create(uid, user).then(_ => {
-          console.log('user added successfully');
-        }).catch(error => {
-          console.error(error);
-        })
-      }).catch(error => console.error(error));
+          this.router.navigate(['profile']);
+        }).catch(_ => {
+          this.error = true;
+        });
+      }).catch(_ => {
+        this.error = true;
+      });
     }
   }
-
 }

@@ -38,7 +38,7 @@ export class ProfileFormComponent implements OnInit {
         this.nailForm.value.date as string,
         this.nailForm.value.time as string,
         this.uid as string
-      ).then(_ => console.log('appointment added successfully')).catch(error => console.error(error));
+      );
     } else {
       console.error('invalid form');
     }

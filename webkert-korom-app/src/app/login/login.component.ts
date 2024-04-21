@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
     email: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required])
   });
+  error = false;
 
   constructor(
     private auth: AuthService,
@@ -25,8 +26,11 @@ export class LoginComponent implements OnInit {
   login(){
     if(this.loginForm.valid){
       this.auth.login(this.loginForm.value.email as string, this.loginForm.value.password as string).then(cred => {
+        this.error = false;
         this.router.navigate(['profile']);
-      }).catch(error => console.error(error));
+      }).catch(_ => {
+        this.error = true;
+      });
     }
   }
 }

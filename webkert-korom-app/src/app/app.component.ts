@@ -25,6 +25,6 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    this.auth.logout().then(() => console.log('logout successful')).catch(error => console.error(error));
+    this.auth.logout();
   }
 }

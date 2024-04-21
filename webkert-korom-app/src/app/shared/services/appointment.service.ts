@@ -24,12 +24,6 @@ export class AppointmentService {
     return this.afs.collection(this.collectionName).doc(id).set(appointment);
   }
 
-  // dateToString(date: string){
-  //   console.log(date);
-  //   const split = date;
-  //   return split[0] + ' ' + split[1] + ' ' + split[1];
-  // }
-
   getAll(uid: string){
     return this.afs.firestore.collection(this.collectionName).where("userId", "==", uid).get();
   }
