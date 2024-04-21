@@ -1,1 +1,7 @@
-<h1>Üdvözöljük a Crystal Nails műkörömstúdió weblapján!</h1>
+<div class="container">
+    <div class="header-div">
+        <h1>Üdvözöljük a Crystal Nails műkörömstúdió weblapján!</h1>
+    </div>
+    <h3 *ngIf="user">A profil menü alatt megtekintheti időpontjait, kiválaszthatja új időpontját. A fórum menüpontra kattintva mások véleményeit olvashatja illetve ön is megoszthatja véleményét velünk.</h3>
+    <h3 *ngIf="!user">Kérjük jelentkezzen be, vagy regisztráljon. A galéria menüpont alatt megtekintheti vendégeink kedvenc körmeit.</h3>
+</div>

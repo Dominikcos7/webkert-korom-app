@@ -2,42 +2,44 @@
     <form [formGroup]="registerForm">
         <div formGroupName="fullname">
             <div>
-                <mat-form-field>
+                <mat-form-field appearance="fill">
                     <mat-label>Vezetéknév</mat-label>
                     <input matInput type="email" formControlName="lastname">
                 </mat-form-field>
             </div>
             <div>
-                <mat-form-field>
+                <mat-form-field appearance="fill">
                     <mat-label>Keresztnév</mat-label>
                     <input matInput type="email" formControlName="firstname">
                 </mat-form-field>
             </div>
         </div>
         <div>
-            <mat-form-field>
+            <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="email">
             </mat-form-field>
         </div>
         <div>
-            <mat-form-field>
+            <mat-form-field appearance="fill">
                 <mat-label>Telefonszám</mat-label>
                 <input matInput type="text" formControlName="telnumber">
             </mat-form-field>
         </div>
         <div>
-            <mat-form-field>
+            <mat-form-field appearance="fill">
                 <mat-label>Jelszó</mat-label>
                 <input matInput type="password" formControlName="password1">
             </mat-form-field>
         </div>
         <div>
-            <mat-form-field>
+            <mat-form-field appearance="fill">
                 <mat-label>Jelszó újra</mat-label>
                 <input matInput type="password" formControlName="password2">
             </mat-form-field>
         </div>
-        <button mat-stroked-button color="primary" (click)="register()">Regisztráció</button>
+        <div class="button-div">
+            <button mat-stroked-button color="primary" (click)="register()">Regisztráció</button>
+        </div>
     </form>
 </div>
