@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { GalleryService } from '../shared/services/gallery.service';
 import { Image } from '../shared/model/Image'
 
@@ -7,7 +7,7 @@ import { Image } from '../shared/model/Image'
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent implements OnInit, AfterViewInit {
   images: Image[] = [];
   // images: any[] = [];
   // urls = [
@@ -25,6 +25,9 @@ export class GalleryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
     this.getImages();
   }
 
